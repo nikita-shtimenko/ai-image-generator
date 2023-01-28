@@ -1,6 +1,6 @@
-# AI-Image-Generator
+# ai-image-generator
 
-AI-Image-Generator is a Python script for generating AI-images (runs with [OpenAI API](https://openai.com/api/)).
+ai-image-generator is a Python script for generating AI-images (runs with [OpenAI API](https://openai.com/api/)).
 
 ## Usage
 

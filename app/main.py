@@ -6,7 +6,7 @@ from app.image_generator import (
     RequestTimeout, 
     RequestRedirectsOverload, 
     RequestsException,
-    UnknowException
+    InvalidResponseFormat
 )
 
 def main():
@@ -41,8 +41,8 @@ def main():
         except RequestsException as error_request:
             print(error_request)
             continue
-        except UnknowException as error_unknown:
-            print(error_unknown)
+        except InvalidResponseFormat as error_invalid_response_format:
+            print(error_invalid_response_format)
             continue
 
 if __name__ == "__main__":

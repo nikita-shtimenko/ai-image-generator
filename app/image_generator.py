@@ -89,13 +89,14 @@ class ImageGenerator:
 
     def image_download(self) -> None:
         image_url: str = ""
+        image_name: str = ""
 
         if isinstance(self.__image_request_response, dict):
             image_url = self.__image_request_response["data"][0]["url"]
+            image_name = f"{self.__image_request_response['created']}.png"
         else:
-            raise UnknowException()
+            raise InvalidResponseFormat()
 
-        image_name: str = f"output_{Config.DIR_OUTPUT_FILES_COUNT + 1}.png"
         image_filepath: str = os.path.join(Config.DIR_OUTPUT, image_name)
 
         print("\n..... Requesting image download")
@@ -110,7 +111,6 @@ class ImageGenerator:
                     with open(image_filepath, 'wb') as image_file:
                         shutil.copyfileobj(raw, image_file)
 
-                Config.DIR_OUTPUT_FILES_COUNT += 1
                 print(f"\n[V] Image downloaded (file: {image_name}, dir: {image_filepath})")
 
         except requests.exceptions.Timeout as error_request_timeout:
@@ -127,12 +127,12 @@ class _ImageGeneratorException(Exception):
     def __str__(self) -> str:
         return "\nImageGeneratorException:"
     
-class UnknowException(_ImageGeneratorException):
+class InvalidResponseFormat(_ImageGeneratorException):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __str__(self) -> str:
-        return f"{super().__str__()} Unknown error occured"
+        return f"{super().__str__()} InvalidResponseFormat: OpenAI-API returned invalid response format."
     
 class _InvalidImagePromptLength(_ImageGeneratorException):
     def __init__(self, *args: object) -> None:

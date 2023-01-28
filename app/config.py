@@ -7,8 +7,6 @@ def config_init() -> None:
     if not os.path.isdir(Config.DIR_OUTPUT):
         os.mkdir(Config.DIR_OUTPUT)
 
-    Config.DIR_OUTPUT_FILES_COUNT = len(os.listdir(Config.DIR_OUTPUT))
-
     load_dotenv()
     _config_init_env_variables()
 
@@ -30,7 +28,6 @@ class Config:
     API_KEY_OPEN_AI: str
     DIR_BASE = Path(__file__).resolve().parent.parent
     DIR_OUTPUT = os.path.join(DIR_BASE, "output")
-    DIR_OUTPUT_FILES_COUNT: int = 0
     IMAGE_PROMPT_MIN_CHARACTERS_NUMBER: int = 5
     IMAGE_SIZES: tuple[str, str, str] = (
         "256x256",

@@ -1,4 +1,4 @@
-from image_generator import (
+from app.image_generator import (
     ImageGenerator, 
     InvalidPromptRequest, 
     APIError, 

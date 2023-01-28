@@ -1,4 +1,4 @@
-from config import config_init, Config
+from app.config import config_init, Config
 import os
 import shutil
 import requests

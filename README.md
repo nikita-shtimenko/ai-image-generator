@@ -11,7 +11,7 @@ API_KEY_OPEN_AI=YOUR_OPEN_AI_API_KEY
 ...
 ```
 
-Poetry (https://python-poetry.org) is used for dependency management, Python 3.11 is required.
+[Poetry](https://python-poetry.org) is used for dependency management, Python 3.11 is required.
 
 Dependencies installation and program run:
 ```shell

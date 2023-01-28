@@ -13,7 +13,7 @@ def config_init() -> None:
     _config_init_env_variables()
 
     try:
-        _config_check_env_variables()
+        _config_validate_env_variables()
     except _InvalidApiKey as error_invalid_api_key:
         print(error_invalid_api_key)
         exit()
@@ -21,7 +21,7 @@ def config_init() -> None:
 def _config_init_env_variables() -> None:
     Config.API_KEY_OPEN_AI = os.getenv("API_KEY_OPEN_AI", "")
 
-def _config_check_env_variables() -> None:
+def _config_validate_env_variables() -> None:
     if not Config.API_KEY_OPEN_AI:
         raise _InvalidApiKey()
 

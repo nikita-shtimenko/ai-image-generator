@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ai-image-generator"
+version = "0.1.0"
+description = ""
+authors = ["Nikita Shtimenko <nikitashtimenko.dev@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^0.26.4"
+python-dotenv = "^0.21.1"
+tqdm = "^4.64.1"
+requests = "^2.28.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -16,8 +16,8 @@ API_KEY_OPEN_AI=YOUR_OPEN_AI_API_KEY
 Dependencies installation and program run:
 ```shell
 poetry install
-cd ai_image_generator
-poetry run python -m img_generator
+cd app
+poetry run img_generator
 ```
 
 ## Contributing

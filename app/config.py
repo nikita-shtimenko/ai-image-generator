@@ -38,7 +38,7 @@ class Config:
         "1024x1024"
     )
 
-class _ConfigException(BaseException):
+class _ConfigException(Exception):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
